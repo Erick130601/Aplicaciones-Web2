@@ -4,11 +4,14 @@
   <pv-input-text v-model="start" type="number">Start</pv-input-text>
   <pv-input-text v-model="end" type="number">End</pv-input-text>
   <pv-button @click="refresh()">Refresh</pv-button>
+<br><br>
+  <pv-database :value="users" tableStyle="min-width: 20rem">
+    <pv-column v-for="col in users" :key="col.field" :field="col.field" :header="col.header"></pv-column>
+  </pv-database>
 
-
-  <div v-for="user in users">
-    <div>{{ user.id + " - " + user.name }}</div>
-  </div>
+<!--  <div v-for="user in users">-->
+<!--    <div>{{ user.id + " - " + user.name }}</div>-->
+<!--  </div>-->
 </template>
 
 
@@ -23,7 +26,7 @@ export default {
   data() {
     return {
       users: [],
-
+      columns:null,
       start: 0,
       end: 10,
     };

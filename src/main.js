@@ -24,6 +24,6 @@ app.component("pv-button", Button);
 app.component("pv-input-text", InputText);
 app.component("pv-calendar", Calendar);
 app.component("pv-database", DataTable);
-
+app.component("pv-column", Column);
 
 app.mount("#app");
